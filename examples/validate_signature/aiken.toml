@@ -2,6 +2,7 @@ name = "aiken-lang/validate_signature"
 version = "1.0.0"
 licences = ["Apache-2.0"]
 description = "Aiken contracts for project 'aiken-lang/validate_signature'"
+author = "Thang Tran"
 
 [[dependencies]]
 name = "aiken-lang/stdlib"
