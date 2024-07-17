@@ -1,0 +1,56 @@
+{
+  "preamble": {
+    "title": "aiken-lang/validate_signature",
+    "description": "Aiken contracts for project 'aiken-lang/validate_signature'",
+    "version": "1.0.0",
+    "plutusVersion": "v2",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.0.29-alpha+16fb02e"
+    }
+  },
+  "validators": [
+    {
+      "title": "validate_signature.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/validate_signature~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "_",
+        "schema": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "compiledCode": "589d010000323232323232232225333005323322323300100100322533300d00114a0264a66601666e3cdd718078010020a51133003003001300f001375860146016601660166016601660166016601660106ea8c004c020dd50011bae30013008375400a4601400229309b2b299980119b8748000c00cdd500089919299980398048010a4c2c6eb8c01c004c010dd50008b2b9a5573aaae7955cfaba15745",
+      "hash": "7df648b1ce1470bbecd1d9a34b29b0dc3041efd771f482ec6a991b1d"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "Data": {
+      "title": "Data",
+      "description": "Any Plutus data."
+    },
+    "validate_signature/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owner",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
