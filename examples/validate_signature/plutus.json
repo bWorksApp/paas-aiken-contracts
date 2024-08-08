@@ -1,13 +1,14 @@
 {
   "preamble": {
-    "title": "aiken-lang/validate_signature",
-    "description": "Aiken contracts for project 'aiken-lang/validate_signature'",
-    "version": "1.0.0",
+    "title": "paas/validate_signature",
+    "description": "Aiken contracts for project 'paas/validate_signature'",
+    "version": "0.0.0",
     "plutusVersion": "v2",
     "compiler": {
       "name": "Aiken",
       "version": "v1.0.29-alpha+16fb02e"
-    }
+    },
+    "license": "Apache-2.0"
   },
   "validators": [
     {

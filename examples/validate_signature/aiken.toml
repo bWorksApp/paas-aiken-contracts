@@ -1,10 +1,17 @@
-name = "aiken-lang/validate_signature"
-version = "1.0.0"
-licences = ["Apache-2.0"]
-description = "Aiken contracts for project 'aiken-lang/validate_signature'"
+name = "paas/validate_signature"
+version = "0.0.0"
 author = "Thang Tran"
+compiler = "v1.0.29-alpha"
+plutus = "v2"
+license = "Apache-2.0"
+description = "Aiken contracts for project 'paas/validate_signature'"
+
+[repository]
+user = "paas"
+project = "validate_signature"
+platform = "github"
 
 [[dependencies]]
 name = "aiken-lang/stdlib"
-version = "main"
+version = "1.9.0"
 source = "github"

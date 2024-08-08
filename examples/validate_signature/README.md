@@ -1,24 +1,55 @@
-# Validate signing wallet signature!
+# validate_signature
 
+Write validators in the `validators` folder, and supporting functions in the `lib` folder using `.ak` as a file extension.
+
+For example, as `validators/always_true.ak`
+
+```gleam
+validator {
+  fn spend(_datum: Data, _redeemer: Data, _context: Data) -> Bool {
+    True
+  }
+}
 ```
-user attach wallet public key hash to datum when they lock asset to this contract then only this wallet can unlock this UTXO
-```
+
 ## Building
 
-```
+```sh
 aiken build
 ```
 
+## Testing
 
-## Lock fund to contract
+You can write tests in any module using the `test` keyword. For example:
 
+```gleam
+test foo() {
+  1 + 1 == 2
+}
 ```
-https://paas.bworks.app/#/trycontract
+
+To run all tests, simply do:
+
+```sh
+aiken check
 ```
 
+To run only tests matching the string `foo`, do:
 
-## Unlock fund from contract
+```sh
+aiken check -m foo
+```
 
+## Documentation
+
+If you're writing a library, you might want to generate an HTML documentation for it.
+
+Use:
+
+```sh
+aiken docs
 ```
-https://paas.bworks.app/#/trycontract
-```
+
+## Resources
+
+Find more on the [Aiken's user manual](https://aiken-lang.org).

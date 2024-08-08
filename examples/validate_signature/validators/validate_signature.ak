@@ -11,9 +11,9 @@ type Datum {
 validator {
   fn spend(datum: Datum, _, context: ScriptContext) -> Bool {
    
-    let must_be_signed =
+    let is_validated =
       list.has(context.transaction.extra_signatories, datum.owner)
 
-    must_be_signed
+    is_validated
   }
 }
