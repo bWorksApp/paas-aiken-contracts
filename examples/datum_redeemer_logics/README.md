@@ -1,8 +1,8 @@
 # validate_signature
 
-Validate the signature of signed wallet with the one attached to datum.
-Only valid wallet can sign unlock transaction.
-
+Validate the number and string attached into datum and redeemer.
+The transaction is validated only if the number and string in datum and redeemer are the same.
+datum, redeemer format: [number, string]
 
 ## Building
 

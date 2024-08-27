@@ -1,0 +1,17 @@
+name = "paas/datum_redeemer_logics"
+version = "0.0.0"
+author = "Thang Tran"
+compiler = "v1.0.29-alpha"
+plutus = "v2"
+license = "Apache-2.0"
+description = "Aiken contracts for project 'paas/datum_redeemer_logics'"
+
+[repository]
+user = "paas"
+project = "datum_redeemer_logics"
+platform = "github"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "1.9.0"
+source = "github"

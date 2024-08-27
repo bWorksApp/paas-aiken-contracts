@@ -1,0 +1,80 @@
+{
+  "preamble": {
+    "title": "paas/datum_redeemer_logics",
+    "description": "Aiken contracts for project 'paas/datum_redeemer_logics'",
+    "version": "0.0.0",
+    "plutusVersion": "v2",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.0.29-alpha+16fb02e"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "datum_redeemer_logics.datum_redeemer_logicsdatum_redeemer_logics",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/datum_redeemer_logics~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/datum_redeemer_logics~1Redeemer"
+        }
+      },
+      "compiledCode": "58c001000032323232323223223225333006325333007323371e6eb8c004c028dd50029bae3001300a375400e46018601a00220022940c8cdc39bad3001300937540086eb4c004c024dd5003118058008a4c26caca66600866e1d200030053754002264646464a666016601a0042930b1bae300b001300b002375a6012002600c6ea8004594ccc008cdc3a400060066ea80044c8c8c8c94ccc024c02c00852616375c601200260120046eb4c01c004c010dd50008b2b9a5573aaae7955cfaba15745",
+      "hash": "eb4e3643beff9a36b7473ffbc3ef1f91d071d96ae68689983e775473"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "Int": {
+      "dataType": "integer"
+    },
+    "datum_redeemer_logics/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "number",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "string",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    },
+    "datum_redeemer_logics/Redeemer": {
+      "title": "Redeemer",
+      "anyOf": [
+        {
+          "title": "Redeemer",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "number",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "string",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
