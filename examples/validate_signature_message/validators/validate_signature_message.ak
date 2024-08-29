@@ -5,20 +5,21 @@ use aiken/transaction/credential.{VerificationKey}
  
 type Datum {
   owner: Hash<Blake2b_224, VerificationKey>,
+  dmessage: ByteArray,
 }
  
 type Redeemer {
-  msg: ByteArray,
+  rmessage: ByteArray,
 }
  
 validator {
-  fn hello_world(datum: Datum, redeemer: Redeemer, context: ScriptContext) -> Bool {
-    let must_say_hello =
-      redeemer.msg == "Hello, World!"
+  fn validate_signature_message(datum: Datum, redeemer: Redeemer, context: ScriptContext) -> Bool {
+    let is_validated_string =
+      redeemer.rmessage ==  datum.dmessage
  
-    let must_be_signed =
+    let is_validated_signature =
       list.has(context.transaction.extra_signatories, datum.owner)
  
-    must_say_hello && must_be_signed
+    is_validated_string && is_validated_signature
   }
 }

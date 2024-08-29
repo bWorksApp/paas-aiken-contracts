@@ -1,7 +1,7 @@
 {
   "preamble": {
-    "title": "aiken-lang/hello-world",
-    "description": "Aiken contracts for project 'aiken-lang/hello-world'",
+    "title": "aiken-lang/validate_signature_message",
+    "description": "Aiken contracts for project 'paas'",
     "version": "0.0.0",
     "plutusVersion": "v2",
     "compiler": {
@@ -12,28 +12,28 @@
   },
   "validators": [
     {
-      "title": "hello.hello_world",
+      "title": "validate_signature_message.validate_signature_message",
       "datum": {
         "title": "datum",
         "schema": {
-          "$ref": "#/definitions/hello~1Datum"
+          "$ref": "#/definitions/validate_signature_message~1Datum"
         }
       },
       "redeemer": {
         "title": "redeemer",
         "schema": {
-          "$ref": "#/definitions/hello~1Redeemer"
+          "$ref": "#/definitions/validate_signature_message~1Redeemer"
         }
       },
-      "compiledCode": "58e901000032323232323223223225333006323253330083371e6eb8c008c028dd5002a4410d48656c6c6f2c20576f726c642100100114a06644646600200200644a66601c00229404c94ccc030cdc79bae301000200414a226600600600260200026eb0c02cc030c030c030c030c030c030c030c030c024dd5180098049baa002375c600260126ea80188c02c0045261365653330043370e900018029baa001132325333009300b002149858dd7180480098031baa0011653330023370e900018019baa0011323253330073009002149858dd7180380098021baa001165734aae7555cf2ab9f5742ae881",
-      "hash": "c1fe430f19ac248a8a7ea47db106002c4327e542c3fdc60ad6481103"
+      "compiledCode": "58ee01000032323232323223223225333006323253330083371e6eb8c008c028dd50029bae300c300d300a375400e20022940cc88c8cc00400400c894ccc038004528099299980619b8f375c602000400829444cc00c00c004c040004dd618059806180618061806180618061806180618049baa3001300937540046eb8c004c024dd5003118058008a4c26caca66600866e1d20003005375400226464a66601260160042930b1bae3009001300637540022ca66600466e1d200030033754002264646464a66601260160042930b1bae30090013009002375c600e00260086ea8004595cd2ab9d5573caae7d5d0aba21",
+      "hash": "5a5ab632c757d1d9507e18c17ff6457d2835d0629a7f6a3b599dd4a7"
     }
   ],
   "definitions": {
     "ByteArray": {
       "dataType": "bytes"
     },
-    "hello/Datum": {
+    "validate_signature_message/Datum": {
       "title": "Datum",
       "anyOf": [
         {
@@ -44,12 +44,16 @@
             {
               "title": "owner",
               "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "dmessage",
+              "$ref": "#/definitions/ByteArray"
             }
           ]
         }
       ]
     },
-    "hello/Redeemer": {
+    "validate_signature_message/Redeemer": {
       "title": "Redeemer",
       "anyOf": [
         {
@@ -58,7 +62,7 @@
           "index": 0,
           "fields": [
             {
-              "title": "msg",
+              "title": "rmessage",
               "$ref": "#/definitions/ByteArray"
             }
           ]
