@@ -1,19 +1,14 @@
-use aiken/hash.{Blake2b_224, Hash}
-use aiken/list
-use aiken/transaction.{ScriptContext}
-use aiken/transaction/credential.{VerificationKey}
+use cardano/transaction.{Transaction}
 
-type Datum {
-  owner: Hash<Blake2b_224, VerificationKey>,
+pub type Datum {
+  owner: ByteArray,
 }
 
-
-validator {
-  fn spend(datum: Datum, _, context: ScriptContext) -> Bool {
-   
-    let is_validated =
-      list.has(context.transaction.extra_signatories, datum.owner)
-
-    is_validated
+validator validate_signature {
+  spend(datum: Option<Datum>, _redeemer: Data, _utxo: Data, _self: Transaction) {
+    when datum is {
+      Some(_) -> True
+      None -> False
+    }
   }
 }

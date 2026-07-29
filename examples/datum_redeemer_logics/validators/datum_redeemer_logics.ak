@@ -1,23 +1,24 @@
-use aiken/transaction.{ScriptContext}
- 
-type Datum {
+use cardano/transaction.{Transaction}
+
+pub type Datum {
   number: Int,
   string: ByteArray,
 }
- 
-type Redeemer {
+
+pub type Redeemer {
   number: Int,
   string: ByteArray,
 }
- 
-validator {
-  fn datum_redeemer_logicsdatum_redeemer_logics(datum: Datum, redeemer: Redeemer, _context: ScriptContext) -> Bool {
-    let is_same_string =
-      redeemer.string == datum.string
- 
-  let is_same_number =
-      redeemer.number == datum.number
-      
-    is_same_string && is_same_number
+
+validator datum_redeemer_logics {
+  spend(datum: Option<Datum>, redeemer: Redeemer, _utxo: Data, _self: Transaction) {
+    when datum is {
+      Some(d) -> {
+        let is_same_string = redeemer.string == d.string
+        let is_same_number = redeemer.number == d.number
+        is_same_string && is_same_number
+      }
+      None -> False
+    }
   }
 }

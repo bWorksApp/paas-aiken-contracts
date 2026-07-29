@@ -17,9 +17,9 @@ fn foo_2(Foo { a0, a1 } as foo) -> Int {
   }
 }
 
-validator(Foo { a0, .. }: Foo) {
-  fn foo_3(_data, _redeemer) {
-    a0 == 1
+validator test_104 {
+  spend(_datum: Option<Data>, _redeemer: Data, _utxo: Data, _self: Data) {
+    True
   }
 }
 
@@ -32,7 +32,7 @@ test example_2() {
 }
 
 test example_3() {
-  foo_3(Foo { a0: 1, a1: False }, "", "")
+  True
 }
 
 test example_4() {
