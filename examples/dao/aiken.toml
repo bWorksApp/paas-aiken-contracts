@@ -1,0 +1,17 @@
+name = "paas/dao"
+version = "0.0.0"
+author = "Thang Tran"
+compiler = "v1.1.23"
+plutus = "v3"
+license = "Apache-2.0"
+description = "A simple DAO-style Aiken example"
+
+[repository]
+user = "paas"
+project = "dao"
+platform = "github"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "v3.1.0"
+source = "github"
