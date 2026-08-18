@@ -1,0 +1,17 @@
+name = "paas/kyc"
+version = "0.0.0"
+author = "Thang Tran"
+compiler = "v1.1.23"
+plutus = "v3"
+license = "Apache-2.0"
+description = "A simple KYC verification validator"
+
+[repository]
+user = "paas"
+project = "kyc"
+platform = "github"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "v3.1.0"
+source = "github"
